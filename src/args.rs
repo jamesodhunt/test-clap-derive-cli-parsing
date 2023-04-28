@@ -45,10 +45,7 @@ pub enum CheckSubCommand {
 pub fn handle() -> Result<()> {
     let args = AppArgs::parse();
 
-    //let log_level = args.log_level.ok_or_default("info").map_err(|e| anyhow!(e))?;
     let log_level = args.log_level.unwrap_or("info".to_string());
-    //.ok_or_default("info")
-    //.map_err(|e| anyhow!(e))?;
 
     println!("INFO: log level: {:?}", log_level);
 
